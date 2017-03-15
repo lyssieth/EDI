@@ -8,7 +8,6 @@ import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.utils.SimpleLog;
 
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 /**
  * Created by raxix on 14/03/2017, 20:03.

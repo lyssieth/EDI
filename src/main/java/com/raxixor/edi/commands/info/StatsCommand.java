@@ -3,7 +3,6 @@ package com.raxixor.edi.commands.info;
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
 import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.entities.MessageEmbed;
 
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;

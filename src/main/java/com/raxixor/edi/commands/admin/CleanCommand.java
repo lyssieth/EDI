@@ -5,7 +5,6 @@ import me.jagrosh.jdautilities.commandclient.CommandEvent;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
 
 import java.util.ArrayList;

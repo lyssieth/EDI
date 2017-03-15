@@ -9,9 +9,6 @@ import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.entities.Member;
 
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by raxix on 14/03/2017, 19:10.

@@ -11,7 +11,6 @@ import com.raxixor.edi.commands.info.UserInfoCommand;
 import com.raxixor.edi.commands.owner.GivePermCommand;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
-import me.jagrosh.jdautilities.commandclient.examples.AboutCommand;
 import me.jagrosh.jdautilities.commandclient.examples.PingCommand;
 import me.jagrosh.jdautilities.commandclient.examples.ShutdownCommand;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
@@ -21,15 +20,10 @@ import net.dv8tion.jda.core.exceptions.*;
 import net.dv8tion.jda.core.utils.SimpleLog;
 
 import javax.security.auth.login.LoginException;
-import java.awt.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
 import java.util.List;
-import java.util.Properties;
 
 /**
  * Created by raxix on 14/03/2017, 11:02.
@@ -38,7 +32,7 @@ import java.util.Properties;
 public class EDI {
 
     /**
-     * 
+     * The main function.
      * @param args Commandline arguments.
      */
     public static void main(String[] args) {

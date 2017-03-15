@@ -63,7 +63,6 @@ public class CleanCommand extends Command {
         this.name = "clean";
         this.arguments = "@user(s) | \"text\" | bots | embeds | links | all";
         this.help = "cleans messages in the past 100, matching the given criteria";
-        this.userPermissions = new Permission[] {Permission.MESSAGE_MANAGE, Permission.MESSAGE_HISTORY};
         this.botPermissions = new Permission[] {Permission.MESSAGE_MANAGE, Permission.MESSAGE_HISTORY};
         this.guildOnly = true;
         this.category = bot.MOD;

@@ -21,7 +21,6 @@ public class KickCommand extends Command {
         this.name = "kick";
         this.arguments = "@user [@user...]";
         this.help = "kicks all mentioned users";
-        this.userPermissions = new Permission[]{Permission.KICK_MEMBERS};
         this.botPermissions = new Permission[]{Permission.KICK_MEMBERS};
         this.guildOnly = true;
         this.category = bot.MOD;

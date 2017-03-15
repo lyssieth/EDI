@@ -5,6 +5,7 @@ import com.raxixor.edi.Constants;
 import com.sun.istack.internal.Nullable;
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
+import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.TextChannel;
 
 /**
@@ -18,6 +19,7 @@ public class TextChannelCommand extends Command {
 		this.guildOnly = true;
 		this.ownerCommand = false;
 		this.category = bot.MOD;
+		this.botPermissions = new Permission[] {Permission.MANAGE_CHANNEL};
 		this.arguments = "new <name>";
 	}
 	

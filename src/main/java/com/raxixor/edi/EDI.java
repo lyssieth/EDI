@@ -1,5 +1,6 @@
 package com.raxixor.edi;
 
+import com.raxixor.edi.commands.channel.TextChannelCommand;
 import com.raxixor.edi.commands.owner.*;
 import com.raxixor.edi.commands.admin.BanCommand;
 import com.raxixor.edi.commands.mod.CleanCommand;
@@ -59,6 +60,7 @@ public class EDI {
 		                    new CleanCommand(waiter, bot),
 		                    new MagnetCommand(waiter, bot),
                             new KickCommand(bot),
+		                    new TextChannelCommand(bot),
 		                    
                             new BanCommand(bot),
 		                    

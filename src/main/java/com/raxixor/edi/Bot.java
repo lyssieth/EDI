@@ -27,7 +27,7 @@ public class Bot {
 	public final Category MOD = new Category("Moderator", event -> {
 		if (event.getAuthor().getId().equals(event.getClient().getOwnerId()))
 			return true;
-		if (PermissionUtil.checkPermission(event.getGuild(), event.getMember(), Permission.MESSAGE_MANAGE, Permission.KICK_MEMBERS))
+		if (PermissionUtil.checkPermission(event.getGuild(), event.getMember(), Permission.MESSAGE_MANAGE, Permission.KICK_MEMBERS, Permission.MANAGE_CHANNEL))
 			return true;
 		return false;
 	});

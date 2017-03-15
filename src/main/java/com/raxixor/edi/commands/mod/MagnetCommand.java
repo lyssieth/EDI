@@ -28,7 +28,6 @@ public class MagnetCommand extends Command {
         this.arguments = "[channel to connect to] (or just be in a channel)";
         this.guildOnly = true;
         this.category = bot.MOD;
-        this.userPermissions = new Permission[] {Permission.VOICE_MOVE_OTHERS};
         this.botPermissions = new Permission[] {Permission.VOICE_MOVE_OTHERS};
     }
     

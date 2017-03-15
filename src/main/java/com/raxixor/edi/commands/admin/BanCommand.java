@@ -22,7 +22,6 @@ public class BanCommand extends Command {
         this.name = "ban";
         this.arguments = "@user [@user...]";
         this.help = "bans all mentioned users";
-        this.userPermissions = new Permission[]{Permission.BAN_MEMBERS};
         this.botPermissions = new Permission[]{Permission.BAN_MEMBERS};
         this.guildOnly = true;
         this.category = bot.ADMIN;

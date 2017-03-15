@@ -1,4 +1,4 @@
-package com.raxixor.edi.commands.admin;
+package com.raxixor.edi.commands.mod;
 
 import com.raxixor.edi.Bot;
 import me.jagrosh.jdautilities.commandclient.Command;

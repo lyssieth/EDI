@@ -2,16 +2,15 @@ package com.raxixor.edi;
 
 import com.raxixor.edi.commands.owner.*;
 import com.raxixor.edi.commands.admin.BanCommand;
-import com.raxixor.edi.commands.admin.CleanCommand;
-import com.raxixor.edi.commands.admin.KickCommand;
-import com.raxixor.edi.commands.admin.MagnetCommand;
+import com.raxixor.edi.commands.mod.CleanCommand;
+import com.raxixor.edi.commands.mod.KickCommand;
+import com.raxixor.edi.commands.mod.MagnetCommand;
 import com.raxixor.edi.commands.info.RoleInfoCommand;
 import com.raxixor.edi.commands.info.UserInfoCommand;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
 import me.jagrosh.jdautilities.commandclient.examples.AboutCommand;
 import me.jagrosh.jdautilities.commandclient.examples.PingCommand;
-import me.jagrosh.jdautilities.commandclient.examples.ShutdownCommand;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
 import net.dv8tion.jda.core.*;
 import net.dv8tion.jda.core.entities.Game;
@@ -68,7 +67,7 @@ public class EDI {
 		                    new SetStatusCommand(bot),
 		                    new SetGameCommand(bot),
 		                    new SetNameCommand(bot),
-		                    new ShutdownCommand()
+		                    new ShutdownCommand(bot)
                     ).build();
             new JDABuilder(AccountType.BOT)
                     .setToken(token)

@@ -53,18 +53,22 @@ public class EDI {
 		                            "a small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
 		                            new String[] {"Easy to modify", "Requires knowledge of java to host yourself", "Actively developed"}),
                             new PingCommand(),
-                            new ShutdownCommand(),
-                            new EvalCommand(bot),
+		                    
+		                    new UserInfoCommand(bot),
+		                    new RoleInfoCommand(bot),
+		
+		                    new CleanCommand(waiter, bot),
+		                    new MagnetCommand(waiter, bot),
                             new KickCommand(bot),
+		                    
                             new BanCommand(bot),
-                            new CleanCommand(waiter, bot),
-                            new StatsCommand(bot),
-                            new UserInfoCommand(bot),
-                            new RoleInfoCommand(bot),
-                            new MagnetCommand(waiter, bot),
+		                    
+		                    new EvalCommand(bot),
+		                    new StatsCommand(bot),
 		                    new SetStatusCommand(bot),
 		                    new SetGameCommand(bot),
-		                    new SetNameCommand(bot)
+		                    new SetNameCommand(bot),
+		                    new ShutdownCommand()
                     ).build();
             new JDABuilder(AccountType.BOT)
                     .setToken(token)

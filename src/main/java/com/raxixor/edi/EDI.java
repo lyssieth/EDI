@@ -1,12 +1,11 @@
 package com.raxixor.edi;
 
-import com.raxixor.edi.commands.owner.EvalCommand;
+import com.raxixor.edi.commands.owner.*;
 import com.raxixor.edi.commands.admin.BanCommand;
 import com.raxixor.edi.commands.admin.CleanCommand;
 import com.raxixor.edi.commands.admin.KickCommand;
 import com.raxixor.edi.commands.admin.MagnetCommand;
 import com.raxixor.edi.commands.info.RoleInfoCommand;
-import com.raxixor.edi.commands.owner.StatsCommand;
 import com.raxixor.edi.commands.info.UserInfoCommand;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
@@ -62,7 +61,10 @@ public class EDI {
                             new StatsCommand(bot),
                             new UserInfoCommand(bot),
                             new RoleInfoCommand(bot),
-                            new MagnetCommand(waiter, bot)
+                            new MagnetCommand(waiter, bot),
+		                    new SetStatusCommand(bot),
+		                    new SetGameCommand(bot),
+		                    new SetNameCommand(bot)
                     ).build();
             new JDABuilder(AccountType.BOT)
                     .setToken(token)

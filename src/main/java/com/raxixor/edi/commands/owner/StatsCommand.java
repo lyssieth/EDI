@@ -1,5 +1,6 @@
-package com.raxixor.edi.commands.info;
+package com.raxixor.edi.commands.owner;
 
+import com.raxixor.edi.Bot;
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -14,11 +15,12 @@ import java.time.format.DateTimeFormatter;
 public class StatsCommand extends Command {
     
     private final OffsetDateTime start = OffsetDateTime.now();
-    public StatsCommand() {
+    public StatsCommand(Bot bot) {
         this.name = "stats";
         this.help = "shows some statistics about the bot";
         this.ownerCommand = true;
         this.guildOnly = false;
+        this.category = bot.BOT_OWNER;
     }
     
     @Override

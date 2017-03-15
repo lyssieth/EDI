@@ -1,5 +1,6 @@
 package com.raxixor.edi.commands.admin;
 
+import com.raxixor.edi.Bot;
 import com.raxixor.edi.Constants;
 import com.raxixor.edi.utils.FormatUtil;
 import me.jagrosh.jdautilities.commandclient.Command;
@@ -16,13 +17,14 @@ import java.util.LinkedList;
  */
 public class KickCommand extends Command {
     
-    public KickCommand() {
+    public KickCommand(Bot bot) {
         this.name = "kick";
         this.arguments = "@user [@user...]";
         this.help = "kicks all mentioned users";
         this.userPermissions = new Permission[]{Permission.KICK_MEMBERS};
         this.botPermissions = new Permission[]{Permission.KICK_MEMBERS};
         this.guildOnly = true;
+        this.category = bot.MOD;
     }
     
     @Override

@@ -1,5 +1,6 @@
 package com.raxixor.edi.commands.admin;
 
+import com.raxixor.edi.Bot;
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
@@ -57,7 +58,7 @@ public class CleanCommand extends Command {
         }
     }
     
-    public CleanCommand(EventWaiter waiter) {
+    public CleanCommand(EventWaiter waiter, Bot bot) {
         this.waiter = waiter;
         this.name = "clean";
         this.arguments = "@user(s) | \"text\" | bots | embeds | links | all";
@@ -65,6 +66,7 @@ public class CleanCommand extends Command {
         this.userPermissions = new Permission[] {Permission.MESSAGE_MANAGE, Permission.MESSAGE_HISTORY};
         this.botPermissions = new Permission[] {Permission.MESSAGE_MANAGE, Permission.MESSAGE_HISTORY};
         this.guildOnly = true;
+        this.category = bot.MOD;
     }
     
     @Override

@@ -1,5 +1,6 @@
 package com.raxixor.edi.commands.info;
 
+import com.raxixor.edi.Bot;
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -15,7 +16,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class RoleInfoCommand extends Command {
     
-    public RoleInfoCommand() {
+    public RoleInfoCommand(Bot bot) {
         this.name = "rinfo";
         this.help = "shows info on a role in a server";
         this.arguments = "role name | id";

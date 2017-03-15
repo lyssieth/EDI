@@ -1,5 +1,6 @@
 package com.raxixor.edi.commands.info;
 
+import com.raxixor.edi.Bot;
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -16,11 +17,12 @@ import java.time.format.DateTimeFormatter;
  */
 public class UserInfoCommand extends Command {
     
-    public UserInfoCommand() {
+    public UserInfoCommand(Bot bot) {
         this.name = "uinfo";
         this.help = "shows info on a user in the server";
         this.arguments = "@user | userID";
         this.guildOnly = true;
+        this.category = bot.GUILD_ONLY;
         this.botPermissions = new Permission[] {Permission.MESSAGE_EMBED_LINKS};
     }
     

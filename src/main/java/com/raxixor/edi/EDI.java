@@ -1,16 +1,16 @@
 package com.raxixor.edi;
 
-import com.raxixor.edi.commands.EvalCommand;
+import com.raxixor.edi.commands.owner.EvalCommand;
 import com.raxixor.edi.commands.admin.BanCommand;
 import com.raxixor.edi.commands.admin.CleanCommand;
 import com.raxixor.edi.commands.admin.KickCommand;
 import com.raxixor.edi.commands.admin.MagnetCommand;
 import com.raxixor.edi.commands.info.RoleInfoCommand;
-import com.raxixor.edi.commands.info.StatsCommand;
+import com.raxixor.edi.commands.owner.StatsCommand;
 import com.raxixor.edi.commands.info.UserInfoCommand;
-import com.raxixor.edi.commands.owner.GivePermCommand;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
+import me.jagrosh.jdautilities.commandclient.examples.AboutCommand;
 import me.jagrosh.jdautilities.commandclient.examples.PingCommand;
 import me.jagrosh.jdautilities.commandclient.examples.ShutdownCommand;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
@@ -20,6 +20,7 @@ import net.dv8tion.jda.core.exceptions.*;
 import net.dv8tion.jda.core.utils.SimpleLog;
 
 import javax.security.auth.login.LoginException;
+import java.awt.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -40,7 +41,7 @@ public class EDI {
             List<String> list = Files.readAllLines(Paths.get("config.txt"));
             
             String token = list.get(0);
-            
+            Bot bot = new Bot();
             EventWaiter waiter = new EventWaiter();
 
             CommandClient client = new CommandClientBuilder()
@@ -49,17 +50,19 @@ public class EDI {
                     .setPrefix(Constants.PREFIX)
                     .setEmojis(Constants.SUCCESS, Constants.WARNING, Constants.ERROR)
                     .addCommands(
+                            new AboutCommand(Color.green.brighter(),
+		                            "a small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
+		                            new String[] {"Easy to modify", "Requires knowledge of java to host yourself", "Actively developed"}),
                             new PingCommand(),
                             new ShutdownCommand(),
-                            new EvalCommand(),
-                            new KickCommand(),
-                            new BanCommand(),
-                            new CleanCommand(waiter),
-                            new StatsCommand(),
-                            new UserInfoCommand(),
-                            new RoleInfoCommand(),
-                            new MagnetCommand(waiter),
-                            new GivePermCommand()
+                            new EvalCommand(bot),
+                            new KickCommand(bot),
+                            new BanCommand(bot),
+                            new CleanCommand(waiter, bot),
+                            new StatsCommand(bot),
+                            new UserInfoCommand(bot),
+                            new RoleInfoCommand(bot),
+                            new MagnetCommand(waiter, bot)
                     ).build();
             new JDABuilder(AccountType.BOT)
                     .setToken(token)

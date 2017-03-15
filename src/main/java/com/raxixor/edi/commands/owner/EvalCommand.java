@@ -1,5 +1,6 @@
-package com.raxixor.edi.commands;
+package com.raxixor.edi.commands.owner;
 
+import com.raxixor.edi.Bot;
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -17,11 +18,12 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class EvalCommand extends Command {
     
-    public EvalCommand() {
+    public EvalCommand(Bot bot) {
         this.name = "eval";
-        this.help = "evaluates nashorn code";
+        this.help = "evaluates nashorn code **BOT OWNER ONLY**";
         this.ownerCommand = true;
         this.guildOnly = false;
+        this.category = bot.BOT_OWNER;
     }
     
     @Override

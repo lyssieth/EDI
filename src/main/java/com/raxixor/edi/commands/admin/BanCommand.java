@@ -1,5 +1,6 @@
 package com.raxixor.edi.commands.admin;
 
+import com.raxixor.edi.Bot;
 import com.raxixor.edi.Constants;
 import com.raxixor.edi.utils.FormatUtil;
 import me.jagrosh.jdautilities.commandclient.Command;
@@ -17,13 +18,14 @@ import java.util.LinkedList;
  */
 public class BanCommand extends Command {
     
-    public BanCommand() {
+    public BanCommand(Bot bot) {
         this.name = "ban";
         this.arguments = "@user [@user...]";
         this.help = "bans all mentioned users";
         this.userPermissions = new Permission[]{Permission.BAN_MEMBERS};
         this.botPermissions = new Permission[]{Permission.BAN_MEMBERS};
         this.guildOnly = true;
+        this.category = bot.ADMIN;
     }
     
     @Override

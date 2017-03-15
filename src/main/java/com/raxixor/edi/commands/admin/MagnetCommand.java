@@ -1,5 +1,6 @@
 package com.raxixor.edi.commands.admin;
 
+import com.raxixor.edi.Bot;
 import com.raxixor.edi.utils.FinderUtil;
 import com.raxixor.edi.utils.FormatUtil;
 import me.jagrosh.jdautilities.commandclient.Command;
@@ -20,12 +21,13 @@ import java.util.concurrent.TimeUnit;
 public class MagnetCommand extends Command {
     
     private final EventWaiter waiter;
-    public MagnetCommand(EventWaiter waiter) {
+    public MagnetCommand(EventWaiter waiter, Bot bot) {
         this.waiter = waiter;
         this.name = "magnet";
         this.help = "mass-moves voice channel users";
         this.arguments = "[channel to connect to] (or just be in a channel)";
         this.guildOnly = true;
+        this.category = bot.MOD;
         this.userPermissions = new Permission[] {Permission.VOICE_MOVE_OTHERS};
         this.botPermissions = new Permission[] {Permission.VOICE_MOVE_OTHERS};
     }

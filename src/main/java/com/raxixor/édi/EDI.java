@@ -1,0 +1,81 @@
+package com.raxixor.edinet;
+
+import com.raxixor.edinet.commands.EvalCommand;
+import com.raxixor.edinet.commands.admin.BanCommand;
+import com.raxixor.edinet.commands.admin.CleanCommand;
+import com.raxixor.edinet.commands.admin.KickCommand;
+import com.raxixor.edinet.commands.admin.MagnetCommand;
+import com.raxixor.edinet.commands.info.RoleInfoCommand;
+import com.raxixor.edinet.commands.info.StatsCommand;
+import com.raxixor.edinet.commands.info.UserInfoCommand;
+import com.raxixor.edinet.commands.owner.GivePermCommand;
+import me.jagrosh.jdautilities.commandclient.CommandClient;
+import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
+import me.jagrosh.jdautilities.commandclient.examples.AboutCommand;
+import me.jagrosh.jdautilities.commandclient.examples.PingCommand;
+import me.jagrosh.jdautilities.commandclient.examples.ShutdownCommand;
+import me.jagrosh.jdautilities.waiter.EventWaiter;
+import net.dv8tion.jda.core.*;
+import net.dv8tion.jda.core.entities.Game;
+import net.dv8tion.jda.core.exceptions.*;
+import net.dv8tion.jda.core.utils.SimpleLog;
+
+import javax.security.auth.login.LoginException;
+import java.awt.*;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.List;
+import java.util.Properties;
+
+/**
+ * Created by raxix on 14/03/2017, 11:02.
+ * @author raxix <raxixor@gmail.com>
+ */
+public class EDI {
+
+    /**
+     * 
+     * @param args Commandline arguments.
+     */
+    public static void main(String[] args) {
+        try {
+            List<String> list = Files.readAllLines(Paths.get("config.txt"));
+            
+            String token = list.get(0);
+            
+            EventWaiter waiter = new EventWaiter();
+
+            CommandClient client = new CommandClientBuilder()
+                    .useDefaultGame()
+                    .setOwnerId(Constants.OWNER_ID)
+                    .setPrefix(Constants.PREFIX)
+                    .setEmojis(Constants.SUCCESS, Constants.WARNING, Constants.ERROR)
+                    .addCommands(
+                            new PingCommand(),
+                            new ShutdownCommand(),
+                            new EvalCommand(),
+                            new KickCommand(),
+                            new BanCommand(),
+                            new CleanCommand(waiter),
+                            new StatsCommand(),
+                            new UserInfoCommand(),
+                            new RoleInfoCommand(),
+                            new MagnetCommand(waiter),
+                            new GivePermCommand()
+                    ).build();
+            new JDABuilder(AccountType.BOT)
+                    .setToken(token)
+                    .setStatus(OnlineStatus.DO_NOT_DISTURB)
+                    .setGame(Game.of("Loading..."))
+                    .addListener(waiter)
+                    .addListener(client)
+                    .buildAsync();
+        } catch (IOException | LoginException | IllegalArgumentException | RateLimitedException e) {
+            SimpleLog.getLog("Startup").fatal(e);
+        }
+    }
+}

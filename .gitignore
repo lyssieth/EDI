@@ -64,5 +64,12 @@ $RECYCLE.BIN/
 
 # IntelliJ Idea
 .idea/
-Run/config.txt
 Java.iml
+
+Run/config.txt
+Build/
+Deps/
+Run/
+src/test/
+target/classes/com/
+target/generated-sources/

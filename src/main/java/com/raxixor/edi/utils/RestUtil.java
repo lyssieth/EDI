@@ -1,11 +1,12 @@
-package com.raxixor.edinet.utils;
+package com.raxixor.edi.utils;
 
 import com.mashape.unirest.http.*;
-import com.raxixor.edinet.entities.Invite;
+import com.raxixor.edi.entities.Invite;
 import org.json.JSONObject;
 
 /**
  * Created by raxix on 14/03/2017, 17:23.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class RestUtil {
     

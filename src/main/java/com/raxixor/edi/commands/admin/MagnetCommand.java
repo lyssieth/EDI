@@ -1,7 +1,7 @@
-package com.raxixor.edinet.commands.admin;
+package com.raxixor.edi.commands.admin;
 
-import com.raxixor.edinet.utils.FinderUtil;
-import com.raxixor.edinet.utils.FormatUtil;
+import com.raxixor.edi.utils.FinderUtil;
+import com.raxixor.edi.utils.FormatUtil;
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by raxix on 14/03/2017, 20:46.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class MagnetCommand extends Command {
     

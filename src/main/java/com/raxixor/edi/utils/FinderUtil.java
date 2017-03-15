@@ -1,4 +1,4 @@
-package com.raxixor.edinet.utils;
+package com.raxixor.edi.utils;
 
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.VoiceChannel;
@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by raxix on 14/03/2017, 17:03.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class FinderUtil {
     

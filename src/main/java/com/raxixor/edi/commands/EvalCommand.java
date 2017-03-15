@@ -1,4 +1,4 @@
-package com.raxixor.edinet.commands;
+package com.raxixor.edi.commands;
 
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
@@ -13,6 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by raxix on 14/03/2017, 17:44.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class EvalCommand extends Command {
     

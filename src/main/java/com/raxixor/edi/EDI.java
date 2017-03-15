@@ -1,14 +1,14 @@
-package com.raxixor.edinet;
+package com.raxixor.edi;
 
-import com.raxixor.edinet.commands.EvalCommand;
-import com.raxixor.edinet.commands.admin.BanCommand;
-import com.raxixor.edinet.commands.admin.CleanCommand;
-import com.raxixor.edinet.commands.admin.KickCommand;
-import com.raxixor.edinet.commands.admin.MagnetCommand;
-import com.raxixor.edinet.commands.info.RoleInfoCommand;
-import com.raxixor.edinet.commands.info.StatsCommand;
-import com.raxixor.edinet.commands.info.UserInfoCommand;
-import com.raxixor.edinet.commands.owner.GivePermCommand;
+import com.raxixor.edi.commands.EvalCommand;
+import com.raxixor.edi.commands.admin.BanCommand;
+import com.raxixor.edi.commands.admin.CleanCommand;
+import com.raxixor.edi.commands.admin.KickCommand;
+import com.raxixor.edi.commands.admin.MagnetCommand;
+import com.raxixor.edi.commands.info.RoleInfoCommand;
+import com.raxixor.edi.commands.info.StatsCommand;
+import com.raxixor.edi.commands.info.UserInfoCommand;
+import com.raxixor.edi.commands.owner.GivePermCommand;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
 import me.jagrosh.jdautilities.commandclient.examples.AboutCommand;

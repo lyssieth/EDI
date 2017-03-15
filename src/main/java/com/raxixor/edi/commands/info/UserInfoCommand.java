@@ -1,4 +1,4 @@
-package com.raxixor.edinet.commands.info;
+package com.raxixor.edi.commands.info;
 
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
 
 /**
  * Created by raxix on 14/03/2017, 19:10.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class UserInfoCommand extends Command {
     

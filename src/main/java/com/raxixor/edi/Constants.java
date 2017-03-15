@@ -1,7 +1,8 @@
-package com.raxixor.edinet;
+package com.raxixor.edi;
 
 /**
- * Created by raxix on 14/03/2017, 17:10.
+ * Created by raxix on 14/03/2017, 17:10, 20:42.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class Constants {
     

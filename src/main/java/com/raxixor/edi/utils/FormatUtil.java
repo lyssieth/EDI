@@ -1,6 +1,6 @@
-package com.raxixor.edinet.utils;
+package com.raxixor.edi.utils;
 
-import com.raxixor.edinet.Constants;
+import com.raxixor.edi.Constants;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.entities.VoiceChannel;
 
@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Created by raxix on 14/03/2017, 17:18.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class FormatUtil {
     

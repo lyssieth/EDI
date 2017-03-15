@@ -1,4 +1,4 @@
-package com.raxixor.edinet.commands.admin;
+package com.raxixor.edi.commands.admin;
 
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 /**
  * Created by raxix on 14/03/2017, 18:41.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class CleanCommand extends Command {
     private final EventWaiter waiter;
@@ -32,7 +33,7 @@ public class CleanCommand extends Command {
 
         private final String unicode, text;
 
-        private CleanType(String unicode, String text)
+        CleanType(String unicode, String text)
         {
             this.unicode = unicode;
             this.text = text;

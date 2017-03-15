@@ -1,4 +1,4 @@
-package com.raxixor.edinet.commands.info;
+package com.raxixor.edi.commands.info;
 
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * Created by raxix on 14/03/2017, 20:03.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class RoleInfoCommand extends Command {
     
@@ -38,8 +39,6 @@ public class RoleInfoCommand extends Command {
             for (Role role1 : event.getGuild().getRoles()) {
                 if (role1.getName().equalsIgnoreCase(event.getArgs()))
                     role = role1;
-                else
-                    continue;
             }
         }
         if (role == null) {

@@ -1,4 +1,4 @@
-package com.raxixor.edinet.commands.owner;
+package com.raxixor.edi.commands.owner;
 
 import me.jagrosh.jdautilities.commandclient.Command;
 import me.jagrosh.jdautilities.commandclient.CommandEvent;
@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by raxix on 14/03/2017, 21:10.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class GivePermCommand extends Command {
     

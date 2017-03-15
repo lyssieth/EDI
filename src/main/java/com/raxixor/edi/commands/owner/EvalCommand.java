@@ -20,7 +20,7 @@ public class EvalCommand extends Command {
     
     public EvalCommand(Bot bot) {
         this.name = "eval";
-        this.help = "evaluates nashorn code **BOT OWNER ONLY**";
+        this.help = "evaluates Nashorn code";
         this.ownerCommand = true;
         this.guildOnly = false;
         this.category = bot.BOT_OWNER;

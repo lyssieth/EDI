@@ -12,7 +12,7 @@ public class SetNameCommand extends Command {
 	
 	public SetNameCommand(Bot bot) {
 		this.name = "setname";
-		this.help = "sets the bot's name **BOT OWNER ONLY**";
+		this.help = "sets the bot's name";
 		this.ownerCommand = true;
 		this.guildOnly = false;
 		this.arguments = "name";
@@ -30,5 +30,4 @@ public class SetNameCommand extends Command {
 			+ t.getMessage());
 		});
 	}
-	
 }

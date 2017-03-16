@@ -73,3 +73,5 @@ Run/
 src/test/
 target/classes/com/
 target/generated-sources/
+/docs/
+docs/

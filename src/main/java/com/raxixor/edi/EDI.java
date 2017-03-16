@@ -69,7 +69,8 @@ public class EDI {
 		                    new SetGameCommand(bot),
 		                    new SetNameCommand(bot),
 		                    new ShutdownCommand(bot),
-		                    new GuildListCommand(bot, waiter)
+		                    new GuildListCommand(bot, waiter),
+		                    new EchoCommand(bot)
                     ).build();
             new JDABuilder(AccountType.BOT)
                     .setToken(token)

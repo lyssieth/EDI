@@ -13,20 +13,45 @@ import java.util.List;
 public class FormatUtil {
     
     private final static String MULTIPLE_FOUND = Constants.WARNING + " | **Multiple %s found matching `%s`:** ";
-    
-    public static String filterEveryone(String input) {
+	
+	/**
+	 * Removes @everyone & @here
+	 * 
+	 * @param input String to filter
+	 * @return Filtered string
+	 */
+	public static String filterEveryone(String input) {
         return input.replace("@everyone", "**@**everyone").replace("@here", "**@**here");
     }
-    
-    public static String formatUser(User user) {
+	
+	/**
+	 * Formats an User's Name & Discriminator
+	 * 
+	 * @param user User to format
+	 * @return Formatted String
+	 */
+	public static String formatUser(User user) {
         return filterEveryone("**" + user.getName() + "**#" + user.getDiscriminator());
     }
-    
-    public static String formatFullUser(User user) {
+	
+	/**
+	 * Formats an User's Name, Discriminator & ID
+	 * 
+	 * @param user User to format
+	 * @return Formatted String
+	 */
+	public static String formatFullUser(User user) {
         return filterEveryone("**" + user.getName() + "**#" + user.getDiscriminator() + "(ID: " + user.getId() + ")");
     }
-    
-    public static String listOfVoice(List<VoiceChannel> list, String query) {
+	
+	/**
+	 * Formats a List of VoiceChannels
+	 * 
+	 * @param list List to format
+	 * @param query Query to match
+	 * @return Formatted String
+	 */
+	public static String listOfVoice(List<VoiceChannel> list, String query) {
         String out = String.format(MULTIPLE_FOUND, "servers", query);
         for (int i = 0; i < 6 && i < list.size(); i++)
             out += "\n - " + list.get(i).getName() + " (ID: " + list.get(i).getId() + ")";

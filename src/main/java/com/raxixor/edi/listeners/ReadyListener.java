@@ -7,6 +7,7 @@ import net.dv8tion.jda.core.utils.SimpleLog;
 
 /**
  * Created by raxix on 16/03/2017, 13:40.
+ * @author Rax Ixor <raxixor@gmail.com>
  */
 public class ReadyListener extends ListenerAdapter {
 	

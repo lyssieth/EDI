@@ -13,6 +13,13 @@ import java.util.List;
  */
 public class FinderUtil {
     
+    /**
+     * Finds a voice channel within the Guild.
+     * 
+     * @param query ID, or String to search for
+     * @param guild Guild to search in
+     * @return Voice Channel(s) found by the search.
+     */
     public static List<VoiceChannel> findVoiceChannel(String query, Guild guild) {
         String id;
         if (query.matches("<#\\d+>")) {

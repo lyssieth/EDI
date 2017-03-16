@@ -50,6 +50,7 @@ public class EDI {
                     .setPrefix(Constants.PREFIX)
                     .setEmojis(Constants.SUCCESS, Constants.WARNING, Constants.ERROR)
 		            .setServerInvite(Constants.SUPPORT_SERVER_INVITE)
+		            .setDiscordBotsKey(list.get(1))
                     .addCommands(
                             new AboutCommand(Color.green.brighter(),
 				                    "a (currently) small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",

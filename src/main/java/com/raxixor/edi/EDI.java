@@ -51,8 +51,8 @@ public class EDI {
 		            .setServerInvite(Constants.SUPPORT_SERVER_INVITE)
                     .addCommands(
                             new AboutCommand(Color.green.brighter(),
-		                            "a small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
-		                            new String[] {"Easy to modify", "Requires knowledge of java to host yourself", "Actively developed"}),
+				                    "a (currently) small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
+				                    new String[] {"Easy to modify", "Requires knowledge of java to host yourself", "Actively developed"}),
                             new PingCommand(),
 		                    
 		                    new UserInfoCommand(bot),

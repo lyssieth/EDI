@@ -73,3 +73,4 @@ src/test/
 target/classes/com/
 target/generated-sources/
 /docs/
+/src/main/resources/config.json

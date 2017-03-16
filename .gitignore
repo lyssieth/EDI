@@ -66,7 +66,6 @@ $RECYCLE.BIN/
 .idea/
 Java.iml
 
-Run/config.txt
 Build/
 Deps/
 Run/
@@ -74,6 +73,3 @@ src/test/
 target/classes/com/
 target/generated-sources/
 /docs/
-docs/_build/
-docs/_static/
-docs/_templates/

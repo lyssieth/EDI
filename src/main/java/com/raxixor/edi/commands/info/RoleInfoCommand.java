@@ -22,6 +22,7 @@ public class RoleInfoCommand extends Command {
         this.arguments = "role name | id";
         this.guildOnly = true;
         this.botPermissions = new Permission[] {Permission.MESSAGE_EMBED_LINKS};
+        this.cooldown = 10;
     }
     
     @Override

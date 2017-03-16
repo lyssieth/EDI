@@ -32,15 +32,11 @@ public class Bot {
 		return false;
 	});
 	public final Category ADMIN = new Category("Admin", event -> {
-		if (event.getAuthor().getId().equals(event.getClient().getOwnerId()))
-			return true;
 		if (PermissionUtil.checkPermission(event.getGuild(), event.getMember(), Permission.MANAGE_PERMISSIONS, Permission.MANAGE_ROLES, Permission.BAN_MEMBERS, Permission.MESSAGE_MANAGE))
 			return true;
 		return false;
 	});
 	public final Category GUILD_OWNER = new Category("Guild Owner", event -> {
-		if (event.getAuthor().getId().equals(event.getClient().getOwnerId()))
-			return true;
 		if (event.getGuild() == null)
 			return false;
 		if (event.getAuthor().getId().equals(event.getGuild().getOwner().getUser().getId()))

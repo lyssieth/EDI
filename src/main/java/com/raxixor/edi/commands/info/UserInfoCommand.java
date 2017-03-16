@@ -24,6 +24,7 @@ public class UserInfoCommand extends Command {
         this.guildOnly = true;
         this.category = bot.GUILD_ONLY;
         this.botPermissions = new Permission[] {Permission.MESSAGE_EMBED_LINKS};
+        this.cooldown = 10;
     }
     
     @Override

@@ -48,6 +48,7 @@ public class EDI {
                     .setOwnerId(Constants.OWNER_ID)
                     .setPrefix(Constants.PREFIX)
                     .setEmojis(Constants.SUCCESS, Constants.WARNING, Constants.ERROR)
+		            .setServerInvite(Constants.SUPPORT_SERVER_INVITE)
                     .addCommands(
                             new AboutCommand(Color.green.brighter(),
 		                            "a small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",

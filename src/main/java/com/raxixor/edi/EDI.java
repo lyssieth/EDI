@@ -1,5 +1,6 @@
 package com.raxixor.edi;
 
+import com.raxixor.edi.commands.all.AboutCommand;
 import com.raxixor.edi.commands.channel.TextChannelCommand;
 import com.raxixor.edi.commands.owner.*;
 import com.raxixor.edi.commands.admin.BanCommand;
@@ -11,7 +12,6 @@ import com.raxixor.edi.commands.info.UserInfoCommand;
 import com.raxixor.edi.listeners.ReadyListener;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
-import me.jagrosh.jdautilities.commandclient.examples.AboutCommand;
 import me.jagrosh.jdautilities.commandclient.examples.PingCommand;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
 import net.dv8tion.jda.core.*;
@@ -50,11 +50,11 @@ public class EDI {
                     .setPrefix(Constants.PREFIX)
                     .setEmojis(Constants.SUCCESS, Constants.WARNING, Constants.ERROR)
 		            .setServerInvite(Constants.SUPPORT_SERVER_INVITE)
-		            .setDiscordBotsKey(list.get(1))
+		            // .setDiscordBotsKey(list.get(1))
                     .addCommands(
                             new AboutCommand(Color.green.brighter(),
 				                    "a (currently) small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
-				                    new String[] {"Easy to modify", "Requires knowledge of java to host yourself", "Actively developed"}),
+				                    new String[] {"Easy to modify", "Requires knowledge of java to host yourself", "Actively developed"}, bot),
                             new PingCommand(),
 		                    
 		                    new UserInfoCommand(bot),

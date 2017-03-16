@@ -10,11 +10,6 @@
 
     <repositories>
         <repository>
-            <id>sdcf4j-repo</id>
-            <url>http://repo.bastian-oppermann.de</url>
-        </repository>
-
-        <repository>
             <id>jcenter</id>
             <name>bintray</name>
             <url>http://jcenter.bintray.com</url>

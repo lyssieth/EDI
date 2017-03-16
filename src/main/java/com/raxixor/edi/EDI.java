@@ -8,6 +8,7 @@ import com.raxixor.edi.commands.mod.KickCommand;
 import com.raxixor.edi.commands.mod.MagnetCommand;
 import com.raxixor.edi.commands.info.RoleInfoCommand;
 import com.raxixor.edi.commands.info.UserInfoCommand;
+import com.raxixor.edi.listeners.ReadyListener;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
 import me.jagrosh.jdautilities.commandclient.examples.AboutCommand;
@@ -78,6 +79,7 @@ public class EDI {
                     .setGame(Game.of("Loading..."))
                     .addListener(waiter)
                     .addListener(client)
+		            .addListener(new ReadyListener())
                     .buildAsync();
         } catch (IOException | LoginException | IllegalArgumentException | RateLimitedException e) {
             SimpleLog.getLog("Startup").fatal(e);

@@ -74,4 +74,6 @@ src/test/
 target/classes/com/
 target/generated-sources/
 /docs/
-docs/
+docs/_build/
+docs/_static/
+docs/_templates/

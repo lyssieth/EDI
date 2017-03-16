@@ -6,6 +6,7 @@ import me.jagrosh.jdautilities.commandclient.CommandEvent;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
 
 import java.util.ArrayList;
@@ -82,7 +83,7 @@ public class CleanCommand extends Command {
                 waiter.waitForEvent(MessageReactionAddEvent.class, (MessageReactionAddEvent e ) -> {
                     return e.getUser().equals(event.getAuthor()) && e.getMessageId().equals(m.getId()) && (e.getReaction().getEmote().getName().equals(CANCEL) || CleanType.of(e.getReaction().getEmote().getName()) != null);
                 }, (MessageReactionAddEvent ev) -> {
-                    m.deleteMessage().queue();
+                    m.delete().queue();
                     CleanType type = CleanType.of(ev.getReaction().getEmote().getName());
                     if (type != null)
                         executeClean(type.getText(), event, " " + type.getText());
@@ -132,12 +133,9 @@ public class CleanCommand extends Command {
                 return;
             }
             if (toClean.size() == 1)
-                toClean.get(0).deleteMessage().queue(v -> event.reply(event.getClient().getSuccess() + " Cleaned **" + toClean.size() + "** messages."));
+                toClean.get(0).delete().queue(v -> event.reply(event.getClient().getSuccess() + " Cleaned **" + toClean.size() + "** messages."));
             else {
-                toClean.forEach(m -> {
-                    m.deleteMessage().queue();
-                });
-                event.reply(event.getClient().getSuccess() + " | Cleaned **" + toClean.size() + "** messages.");
+                (( TextChannel)event.getChannel()).deleteMessages(toClean).queue(v -> event.reply(event.getClient().getSuccess()+" Cleaned "+toClean.size()+" messages."));
             }
         });
     }

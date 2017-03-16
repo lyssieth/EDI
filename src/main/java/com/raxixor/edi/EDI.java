@@ -2,10 +2,11 @@ package com.raxixor.edi;
 
 import com.raxixor.edi.commands.all.*;
 import com.raxixor.edi.commands.channel.*;
+import com.raxixor.edi.commands.guildonly.RoleInfoCommand;
+import com.raxixor.edi.commands.guildonly.UserInfoCommand;
 import com.raxixor.edi.commands.owner.*;
 import com.raxixor.edi.commands.admin.*;
 import com.raxixor.edi.commands.mod.*;
-import com.raxixor.edi.commands.info.*;
 import com.raxixor.edi.listeners.ReadyListener;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;

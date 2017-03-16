@@ -1,4 +1,4 @@
-package com.raxixor.edi.commands.info;
+package com.raxixor.edi.commands.guildonly;
 
 import com.raxixor.edi.Bot;
 import me.jagrosh.jdautilities.commandclient.Command;
@@ -23,6 +23,7 @@ public class RoleInfoCommand extends Command {
         this.guildOnly = true;
         this.botPermissions = new Permission[] {Permission.MESSAGE_EMBED_LINKS};
         this.cooldown = 10;
+        this.category = bot.GUILD_ONLY;
     }
     
     @Override

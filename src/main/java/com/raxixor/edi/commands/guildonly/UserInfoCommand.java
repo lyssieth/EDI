@@ -1,4 +1,4 @@
-package com.raxixor.edi.commands.info;
+package com.raxixor.edi.commands.guildonly;
 
 import com.raxixor.edi.Bot;
 import me.jagrosh.jdautilities.commandclient.Command;

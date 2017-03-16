@@ -74,3 +74,7 @@ target/classes/com/
 target/generated-sources/
 /docs/
 /src/main/resources/config.json
+out/
+target/classes/config.json
+target/classes/config.txt
+target/classes/run.bat

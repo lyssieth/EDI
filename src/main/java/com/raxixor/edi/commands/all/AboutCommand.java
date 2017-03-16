@@ -101,7 +101,7 @@ public class AboutCommand extends Command {
 				}
 			}
 			builder.addField("Users", event.getJDA().getUsers().size() + " unique\n" + online + " online", true);
-			builder.addField("Channels", event.getJDA().getTextChannels().size() + " Text\n" + event.getJDA().getVoiceChannels() + " Voice", true);
+			builder.addField("Channels", event.getJDA().getTextChannels().size() + " Text\n" + event.getJDA().getVoiceChannels().size() + " Voice", true);
 		} else {
 			builder.addField("Stats", (( CommandClientImpl)event.getClient()).getTotalGuilds() + " Guilds\nShard "
 			+ (event.getJDA().getShardInfo().getShardId() + 1) + "/" + event.getJDA().getShardInfo().getShardTotal(), true);

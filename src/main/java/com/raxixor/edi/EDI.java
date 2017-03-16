@@ -1,14 +1,11 @@
 package com.raxixor.edi;
 
-import com.raxixor.edi.commands.all.AboutCommand;
-import com.raxixor.edi.commands.channel.TextChannelCommand;
+import com.raxixor.edi.commands.all.*;
+import com.raxixor.edi.commands.channel.*;
 import com.raxixor.edi.commands.owner.*;
-import com.raxixor.edi.commands.admin.BanCommand;
-import com.raxixor.edi.commands.mod.CleanCommand;
-import com.raxixor.edi.commands.mod.KickCommand;
-import com.raxixor.edi.commands.mod.MagnetCommand;
-import com.raxixor.edi.commands.info.RoleInfoCommand;
-import com.raxixor.edi.commands.info.UserInfoCommand;
+import com.raxixor.edi.commands.admin.*;
+import com.raxixor.edi.commands.mod.*;
+import com.raxixor.edi.commands.info.*;
 import com.raxixor.edi.listeners.ReadyListener;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;

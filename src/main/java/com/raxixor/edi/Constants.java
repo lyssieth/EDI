@@ -1,12 +1,17 @@
 package com.raxixor.edi;
 
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
+
 /**
  * Created by raxix on 14/03/2017, 17:10, 20:42.
  * @author Rax Ixor <raxixor@gmail.com>
  */
 public class Constants {
+	
+	private final static Config conf = ConfigFactory.load("config.json");
     
-    public final static String PREFIX = "::";
+    public final static String PREFIX = conf.getString("prefix");
     public final static String SUCCESS = "\u2611";
     public final static String WARNING = "\u2622";
     public final static String ERROR = "\u203c";
@@ -16,5 +21,5 @@ public class Constants {
     public final static String NEED_ONE = ERROR + " | Please include 1 %s!";
     public final static String SUPPORT_SERVER_INVITE = "https://discord.gg/34JHEru";
     public final static String BOT_INVITE = "https://discordapp.com/oauth2/authorize?client_id=248729096106803200&scope=bot&permissions=2111306879";
-    public final static String OWNER_ID = "145399954574147584";
+    public final static String OWNER_ID = conf.getString("ownerId");
 }

@@ -7,6 +7,9 @@ import com.raxixor.edi.commands.owner.*;
 import com.raxixor.edi.commands.admin.*;
 import com.raxixor.edi.commands.mod.*;
 import com.raxixor.edi.listeners.ReadyListener;
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigException;
+import com.typesafe.config.ConfigFactory;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
@@ -34,9 +37,9 @@ public class EDI {
      */
     public static void main(String[] args) {
         try {
-            List<String> list = Files.readAllLines(Paths.get("config.txt"));
-            
-            String token = list.get(0);
+	        Config conf = ConfigFactory.load("config.json");
+	        
+        	String botToken = conf.getString("tokens.token");
             Bot bot = new Bot();
             EventWaiter waiter = new EventWaiter();
 
@@ -46,7 +49,7 @@ public class EDI {
                     .setPrefix(Constants.PREFIX)
                     .setEmojis(Constants.SUCCESS, Constants.WARNING, Constants.ERROR)
 		            .setServerInvite(Constants.SUPPORT_SERVER_INVITE)
-		            // .setDiscordBotsKey(list.get(1))
+		            // .setDiscordBotsKey(conf.getString("tokens.discordbots"))
                     .addCommands(
                             new AboutCommand(Color.green.brighter(),
 				                    "a (currently) small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
@@ -73,14 +76,14 @@ public class EDI {
 		                    new EchoCommand(bot)
                     ).build();
             new JDABuilder(AccountType.BOT)
-                    .setToken(token)
+                    .setToken(botToken)
                     .setStatus(OnlineStatus.DO_NOT_DISTURB)
                     .setGame(Game.of("Loading..."))
                     .addListener(waiter)
                     .addListener(client)
 		            .addListener(new ReadyListener())
                     .buildAsync();
-        } catch (IOException | LoginException | IllegalArgumentException | RateLimitedException e) {
+        } catch (ConfigException | LoginException | IllegalArgumentException | RateLimitedException e) {
             SimpleLog.getLog("Startup").fatal(e);
         }
     }

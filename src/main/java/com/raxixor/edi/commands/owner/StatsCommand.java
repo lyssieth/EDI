@@ -31,7 +31,7 @@ public class StatsCommand extends Command {
         embed.addField("Last Startup", start.format(DateTimeFormatter.RFC_1123_DATE_TIME), true);
 	    embed.addField("Users", String.valueOf(event.getJDA().getUsers().size()), true);
 	    embed.addField("TextChannels", String.valueOf(event.getJDA().getTextChannels().size()), true); 
-	    embed.addField("PrivateChannels", String.valueOf(event.getJDA().getPrivateChannels()), true);
+	    embed.addField("PrivateChannels", String.valueOf(event.getJDA().getPrivateChannels().size()), true);
 	    embed.addField("VoiceChannels", String.valueOf(event.getJDA().getVoiceChannels().size()), true);
         embed.addField("Guilds", String.valueOf(event.getJDA().getGuilds().size()), true);
         embed.addField("Memory", usedMb + "Mb / " + totalMb + "Mb", true);

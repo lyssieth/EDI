@@ -2,15 +2,13 @@ package com.raxixor.edi;
 
 import com.raxixor.edi.commands.all.*;
 import com.raxixor.edi.commands.channel.*;
-import com.raxixor.edi.commands.guildonly.RoleInfoCommand;
-import com.raxixor.edi.commands.guildonly.UserInfoCommand;
+import com.raxixor.edi.commands.guildonly.*;
 import com.raxixor.edi.commands.owner.*;
 import com.raxixor.edi.commands.admin.*;
 import com.raxixor.edi.commands.mod.*;
 import com.raxixor.edi.listeners.ReadyListener;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
-import me.jagrosh.jdautilities.commandclient.examples.PingCommand;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
 import net.dv8tion.jda.core.*;
 import net.dv8tion.jda.core.entities.Game;
@@ -53,7 +51,7 @@ public class EDI {
                             new AboutCommand(Color.green.brighter(),
 				                    "a (currently) small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
 				                    new String[] {"Easy to modify", "Requires knowledge of java to host yourself", "Actively developed"}, bot),
-                            new PingCommand(),
+                            new PingCommand(bot),
 		                    
 		                    new UserInfoCommand(bot),
 		                    new RoleInfoCommand(bot),
@@ -70,7 +68,8 @@ public class EDI {
 		                    new SetStatusCommand(bot),
 		                    new SetGameCommand(bot),
 		                    new SetNameCommand(bot),
-		                    new ShutdownCommand(bot)
+		                    new ShutdownCommand(bot),
+		                    new GuildListCommand(bot, waiter)
                     ).build();
             new JDABuilder(AccountType.BOT)
                     .setToken(token)

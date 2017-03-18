@@ -10,10 +10,8 @@ import com.typesafe.config.ConfigFactory;
 public class Constants {
 	
 	private final static Config conf = ConfigFactory.load("config.json");
-    
-    public final static String PREFIX = conf.getString("prefix");
-	public final static String OWNER_ID = conf.getString("ownerId");
 	
+	// Non-Config
     public final static String SUCCESS = "\u2611";
     public final static String WARNING = "\u2622";
     public final static String ERROR = "\u203c";
@@ -26,10 +24,14 @@ public class Constants {
     public final static String SUPPORT_SERVER_INVITE = "https://discord.gg/34JHEru";
     public final static String BOT_INVITE = "https://discordapp.com/oauth2/authorize?client_id=248729096106803200&scope=bot&permissions=2111306879";
     
+    public final static String DEFAULT_GREET_MSG = "Welcome, %s, to %s!";
+    public final static String DEFAULT_BYE_MSG = "Bye, %s!";
+    
+    // Config
     public final static String DB_CONNECTION_URL = conf.getString("database.url");
     public final static String DB_CONNECTION_USR = conf.getString("database.user");
     public final static String DB_CONNECTION_PAS = conf.getString("database.password");
-    
-    public final static String DEFAULT_GREET_MSG = "Welcome, %s, to %s!";
-    public final static String DEFAULT_BYE_MSG = "Bye, %s!";
+	
+	public final static String PREFIX = conf.getString("prefix");
+	public final static String OWNER_ID = conf.getString("ownerId");
 }

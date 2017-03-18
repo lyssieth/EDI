@@ -49,11 +49,11 @@ public class EDI {
                     .setPrefix(Constants.PREFIX)
                     .setEmojis(Constants.SUCCESS, Constants.WARNING, Constants.ERROR)
 		            .setServerInvite(Constants.SUPPORT_SERVER_INVITE)
-		            // .setDiscordBotsKey(conf.getString("tokens.discordbots"))
+		            .setDiscordBotsKey(conf.getString("tokens.discordbots"))
                     .addCommands(
                             new AboutCommand(Color.green.brighter(),
 				                    "a (currently) small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
-				                    new String[] {"Easy to modify", "Requires knowledge of java to host yourself", "Actively developed"}, bot),
+				                    new String[] {"Easy to modify", "Requires knowledge of Java to host yourself", "Actively developed"}, bot),
                             new PingCommand(bot),
 		                    
 		                    new UserInfoCommand(bot),

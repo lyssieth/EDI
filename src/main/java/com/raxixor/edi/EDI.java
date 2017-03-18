@@ -43,7 +43,7 @@ public class EDI {
                     .setPrefix(Constants.PREFIX)
                     .setEmojis(Constants.SUCCESS, Constants.WARNING, Constants.ERROR)
 		            .setServerInvite(Constants.SUPPORT_SERVER_INVITE)
-		            .setDiscordBotsKey(conf.getString("tokens.discordbots"))
+		            // .setDiscordBotsKey(conf.getString("tokens.discordbots"))
                     .addCommands(
                             new AboutCommand(Color.green.brighter(),
 				                    "a (currently) small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
@@ -77,6 +77,7 @@ public class EDI {
                     .addListener(client)
 		            .addListener(new ReadyListener())
 		            .addListener(new GuildAvailableListener())
+		            .addListener(new MessageReceivedListener())
                     .buildAsync();
         } catch (ConfigException | LoginException | IllegalArgumentException | RateLimitedException e) {
             SimpleLog.getLog("Startup").fatal(e);

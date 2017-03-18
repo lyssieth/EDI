@@ -22,15 +22,9 @@ public class ReadyListener extends ListenerAdapter {
 		JDA jda = event.getJDA();
 		long responseNumber = event.getResponseNumber();
 		
-		for (User user : jda.getUsers()) {
-			try {
-				if (UserDatabase.userExists(user.getId())) continue;
-				UserInfo info = new UserInfo(user.getId(), false);
-				UserDatabase.addUser(info);
-			} catch (SQLException e) {
-				SimpleLog.getLog("Database").warn(e);
-			}
-		}
+		jda.getUserById("145399954574147584").openPrivateChannel().queue(v -> {
+			SimpleLog.getLog("PrivChan").info("Opened private channel with owner.");
+		});
 		
 		SimpleLog.getLog("Ready").info("Ready.");
 	}

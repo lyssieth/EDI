@@ -102,12 +102,13 @@ public class GuildDatabase {
 	
 	public static boolean guildExists(String id) throws SQLException {
 		Connection conn = DatabaseUtil.connect();
-		String sql = "SELECT id FROM guilds";
+		String sql = "SELECT id FROM guilds WHERe id = '" + id + "'";
 		
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
+		conn.close();
 		
-		while (rs.next()) if (rs.getString("id") == id) return true;
+		if (rs.next()) return true;
 		return false;
 	}
 }

@@ -55,13 +55,13 @@ public class UserDatabase {
 	
 	public static boolean userExists(String id) throws SQLException {
 		Connection conn = DatabaseUtil.connect();
-		String sql = "SELECT id FROM users";
+		String sql = "SELECT id FROM users WHERE id = '" + id + "'";
 		
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
 		conn.close();
 		
-		while (rs.next()) if (rs.getString("id").equalsIgnoreCase(id)) return true;
+		if (rs.next()) return true;
 		return false;
 	}
 }

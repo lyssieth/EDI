@@ -6,24 +6,18 @@ import com.raxixor.edi.commands.guildonly.*;
 import com.raxixor.edi.commands.owner.*;
 import com.raxixor.edi.commands.admin.*;
 import com.raxixor.edi.commands.mod.*;
-import com.raxixor.edi.listeners.ReadyListener;
-import com.typesafe.config.Config;
-import com.typesafe.config.ConfigException;
-import com.typesafe.config.ConfigFactory;
+import com.raxixor.edi.listeners.*;
+import com.typesafe.config.*;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
 import me.jagrosh.jdautilities.waiter.EventWaiter;
 import net.dv8tion.jda.core.*;
-import net.dv8tion.jda.core.entities.Game;
+import net.dv8tion.jda.core.entities.*;
 import net.dv8tion.jda.core.exceptions.*;
 import net.dv8tion.jda.core.utils.SimpleLog;
 
 import javax.security.auth.login.LoginException;
 import java.awt.*;
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
 
 /**
  * Created by raxix on 14/03/2017, 11:02.

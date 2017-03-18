@@ -1,5 +1,7 @@
 package com.raxixor.edi.database.entities.guild;
 
+import com.sun.istack.internal.NotNull;
+
 /**
  * Created by raxix on 18/03/2017, 17:25.
  *
@@ -17,7 +19,7 @@ public class GreetInfo {
 	 * @param greetId greet channel ID
 	 * @param greetMsg greet message
 	 */
-	public GreetInfo(boolean greetEnabled, String greetId, String greetMsg) {
+	public GreetInfo(@NotNull boolean greetEnabled, String greetId, @NotNull String greetMsg) {
 		this.greetEnabled = greetEnabled;
 		this.greetId = greetId;
 		this.greetMsg = greetMsg;

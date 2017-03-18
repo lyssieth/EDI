@@ -29,7 +29,7 @@ public class GuildDatabase {
 		return rs.getInt(1);
 	}
 	
-	public static GuildInfo getGuildInfo(JDA jda, String id) throws SQLException {
+	public static GuildInfo getGuildInfo(String id) throws SQLException {
 		Connection conn = DatabaseUtil.connect();
 		String sql = "SELECT * FROM guilds WHERE id = '" + id + "'";
 		
@@ -53,5 +53,61 @@ public class GuildDatabase {
 				rs.getString("botcommander_id"),
 				rs.getString("chatmute_id")
 			);
+	}
+	
+	public static void addGuild(GuildInfo info) throws SQLException {
+		Connection conn = DatabaseUtil.connect();
+		String greetId;
+		String greetMsg;
+		String byeId;
+		String byeMsg;
+		String botCommanderId;
+		String chatMuteId;
+		if (info.getGreetInfo().getGreetId() != null) {
+			greetId = "'" + info.getGreetInfo().getGreetId() + "'";
+		} else greetId = info.getGreetInfo().getGreetId();
+		if (info.getGreetInfo().getGreetMsg() != null) {
+			greetMsg = "'" + info.getGreetInfo().getGreetMsg() + "'";
+		} else greetMsg = info.getGreetInfo().getGreetMsg();
+		if (info.getByeInfo().getByeId() != null) {
+			byeId = "'" + info.getByeInfo().getByeId() + "'";
+		} else byeId = info.getByeInfo().getByeId();
+		if (info.getByeInfo().getByeMsg() != null) {
+			byeMsg = "'" + info.getByeInfo().getByeMsg() + "'";
+		} else byeMsg = info.getByeInfo().getByeMsg();
+		if (info.getBotCommanderId() != null) {
+			botCommanderId = "'" + info.getBotCommanderId() + "'";
+		} else botCommanderId = info.getBotCommanderId();
+		if (info.getChatMuteId() != null) {
+			chatMuteId = "'" + info.getChatMuteId() + "'";
+		} else chatMuteId = info.getChatMuteId();
+		
+		String sql = "INSERT INTO guilds VALUES ('" +
+				info.getId() + "', '" + info.getOwnerId() + "', " + info.getGreetInfo().getGreetEnabled() + ", " +
+				greetId + ", " + greetMsg + ", " + info.getByeInfo().getByeEnabled() + ", " + byeId + ", " + byeMsg + 
+				", " + botCommanderId + ", " + chatMuteId + ")";
+		Statement stmt = conn.createStatement();
+		stmt.executeUpdate(sql);
+		conn.close();
+	}
+	
+	public static void removeGuild(String id) throws SQLException {
+		Connection conn = DatabaseUtil.connect();
+		String sql = "DELETE FROM guilds WHERE id = '" + id + "'";
+		
+		Statement stmt = conn.createStatement();
+		stmt.executeUpdate(sql);
+		conn.close();
+	}
+	
+	public static boolean guildExists(String id) throws SQLException {
+		Connection conn = DatabaseUtil.connect();
+		String sql = "SELECT id FROM guilds";
+		
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		while (rs.next()) if (rs.getString("id") == id) return true;
+		return false;
 	}
 }

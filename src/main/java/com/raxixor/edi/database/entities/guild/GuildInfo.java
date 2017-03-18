@@ -1,5 +1,7 @@
 package com.raxixor.edi.database.entities.guild;
 
+import com.sun.istack.internal.NotNull;
+
 /**
  * Created by raxix on 18/03/2017, 17:24.
  *
@@ -23,7 +25,7 @@ public class GuildInfo {
 	 * @param botCommanderId bot commander role ID
 	 * @param chatMuteId chat mute role ID
 	 */
-	public GuildInfo(String id, String ownerId, GreetInfo greetInfo, ByeInfo byeInfo, String botCommanderId, String chatMuteId) {
+	public GuildInfo(@NotNull String id, @NotNull String ownerId, @NotNull GreetInfo greetInfo, @NotNull ByeInfo byeInfo, String botCommanderId, String chatMuteId) {
 		this.id = id;
 		this.ownerId = ownerId;
 		this.greetInfo = greetInfo;

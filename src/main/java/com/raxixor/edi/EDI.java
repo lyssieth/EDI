@@ -6,7 +6,7 @@ import com.raxixor.edi.commands.guildonly.*;
 import com.raxixor.edi.commands.owner.*;
 import com.raxixor.edi.commands.admin.*;
 import com.raxixor.edi.commands.mod.*;
-import com.raxixor.edi.listeners.*;
+import com.raxixor.edi.events.*;
 import com.typesafe.config.*;
 import me.jagrosh.jdautilities.commandclient.CommandClient;
 import me.jagrosh.jdautilities.commandclient.CommandClientBuilder;
@@ -76,6 +76,7 @@ public class EDI {
                     .addListener(waiter)
                     .addListener(client)
 		            .addListener(new ReadyListener())
+		            .addListener(new GuildAvailableListener())
                     .buildAsync();
         } catch (ConfigException | LoginException | IllegalArgumentException | RateLimitedException e) {
             SimpleLog.getLog("Startup").fatal(e);

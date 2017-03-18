@@ -19,7 +19,7 @@ public class ByeInfo {
 	 * @param byeId bye channel ID
 	 * @param byeMsg bye message
 	 */
-	public ByeInfo(@NotNull boolean byeEnabled, String byeId, String byeMsg) {
+	public ByeInfo(@NotNull boolean byeEnabled, String byeId, @NotNull String byeMsg) {
 		this.byeEnabled = byeEnabled;
 		this.byeId = byeId;
 		this.byeMsg = byeMsg;

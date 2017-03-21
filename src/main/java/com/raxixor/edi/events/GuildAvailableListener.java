@@ -39,6 +39,7 @@ public class GuildAvailableListener extends ListenerAdapter {
 		try {
 			if (GuildDatabase.guildExists(guild.getId())) return;
 			GuildDatabase.addGuild(info);
+			SimpleLog.getLog("Database").info("Added Guild " + guild.getName() + " (" + guild.getId() + ") to database.");
 		} catch (SQLException e) {
 			SimpleLog.getLog("Database").warn(e);
 		}

@@ -33,7 +33,8 @@ public class EvalCommand extends Command {
         ScriptEngine se = new ScriptEngineManager().getEngineByName("Nashorn");
         se.put("event", event);
         se.put("jda", event.getJDA());
-        se.put("guild", event.getGuild());
+        if (event.getGuild() != null)
+	        se.put("guild", event.getGuild());
         se.put("channel", event.getChannel());
         se.put("message", event.getMessage());
         se.put("random", new Random());

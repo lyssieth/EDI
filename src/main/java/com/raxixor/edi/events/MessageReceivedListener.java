@@ -3,6 +3,7 @@ package com.raxixor.edi.events;
 import com.raxixor.edi.database.UserDatabase;
 import com.raxixor.edi.database.entities.user.UserInfo;
 import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;

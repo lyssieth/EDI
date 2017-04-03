@@ -78,6 +78,8 @@ public class EDI {
 		            .addListener(new ReadyListener())
 		            .addListener(new GuildAvailableListener())
 		            .addListener(new MessageReceivedListener())
+		            .addListener(new GuildJoinListener())
+		            .addListener(new GuildLeaveListener())
                     .buildAsync();
         } catch (ConfigException | LoginException | IllegalArgumentException | RateLimitedException e) {
             SimpleLog.getLog("Startup").fatal(e);

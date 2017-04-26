@@ -27,8 +27,9 @@ public class StatsCommand extends Command {
     protected void execute(CommandEvent event) {
         long totalMb = Runtime.getRuntime().totalMemory() / (1024 * 1024);
         long usedMb = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024);
+        String preFormattedTime = start.getDayOfMonth() + "." + start.getMonthValue() + "." + start.getYear() + " " + start.getHour() + ":" + start.getMinute() + ":" + start.getSecond() + " " + start.getOffset().toString();
         EmbedBuilder embed = new EmbedBuilder();
-        embed.addField("Last Startup", start.format(DateTimeFormatter.RFC_1123_DATE_TIME), true);
+        embed.addField("Last Startup", preFormattedTime, true);
 	    embed.addField("Users", String.valueOf(event.getJDA().getUsers().size()), true);
 	    embed.addField("TextChannels", String.valueOf(event.getJDA().getTextChannels().size()), true); 
 	    embed.addField("PrivateChannels", String.valueOf(event.getJDA().getPrivateChannels().size()), true);

@@ -1,5 +1,6 @@
 package com.raxixor.edi.events;
 
+import com.raxixor.edi.Constants;
 import com.raxixor.edi.database.UserDatabase;
 import com.raxixor.edi.database.entities.user.UserInfo;
 import net.dv8tion.jda.core.JDA;
@@ -21,6 +22,18 @@ public class MessageReceivedListener extends ListenerAdapter {
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
 		JDA jda = event.getJDA();
+		
+		if (event.getMessage().getContent().startsWith(Constants.PREFIX)) {
+			StringBuilder builder = new StringBuilder();
+			if (event.getChannelType() == ChannelType.TEXT) {
+				builder.append("{" + event.getGuild().getName() + " | #" + event.getChannel().getName() + "} ");
+			} else {
+				builder.append("{PRIV} ");
+			}
+			builder.append(String.format("%s#%s | ", event.getAuthor().getName(), event.getAuthor().getDiscriminator()));
+			builder.append(event.getMessage().getContent());
+			SimpleLog.getLog("Command").info(builder.toString());
+		}
 		
 		if (event.isFromType(ChannelType.TEXT)) {
 			if (event.getTextChannel().getGuild().getId() == "110373943822540800") return;

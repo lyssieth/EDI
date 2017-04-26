@@ -78,3 +78,4 @@ out/
 target/classes/config.json
 target/classes/config.txt
 target/classes/run.bat
+/ConsoleLogs/

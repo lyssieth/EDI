@@ -35,6 +35,7 @@ public class EDI {
 	        
         	String botToken = conf.getString("tokens.token");
             Bot bot = new Bot();
+            
             EventWaiter waiter = new EventWaiter();
 
             CommandClient client = new CommandClientBuilder()
@@ -47,7 +48,7 @@ public class EDI {
                     .addCommands(
                             new AboutCommand(Color.green.brighter(),
 				                    "a (currently) small utility bot that is actively being developed. [GitHub](https://github.com/raxixor/EDI)",
-				                    new String[] {"Easy to modify", "Requires knowledge of Java to host yourself", "Actively developed"}, bot),
+				                    new String[] {"Actively developed", "Actually has support... unlike some..."}, bot),
                             new PingCommand(bot),
 		                    
 		                    new UserInfoCommand(bot),
@@ -57,6 +58,7 @@ public class EDI {
 		                    new MagnetCommand(waiter, bot),
                             new KickCommand(bot),
 		                    new TextChannelCommand(bot),
+                            new VoiceChannelCommand(bot),
 		                    
                             new BanCommand(bot),
 		                    
@@ -67,19 +69,20 @@ public class EDI {
 		                    new SetNameCommand(bot),
 		                    new ShutdownCommand(bot),
 		                    new GuildListCommand(bot, waiter),
-		                    new EchoCommand(bot)
+		                    new EchoCommand(bot),
+		                    new BroadcastCommand(bot)
                     ).build();
             new JDABuilder(AccountType.BOT)
                     .setToken(botToken)
                     .setStatus(OnlineStatus.DO_NOT_DISTURB)
                     .setGame(Game.of("Loading..."))
-                    .addListener(waiter)
-                    .addListener(client)
-		            .addListener(new ReadyListener())
-		            .addListener(new GuildAvailableListener())
-		            .addListener(new MessageReceivedListener())
-		            .addListener(new GuildJoinListener())
-		            .addListener(new GuildLeaveListener())
+                    .addEventListener(waiter)
+                    .addEventListener(client)
+		            .addEventListener(new ReadyListener())
+		            .addEventListener(new GuildAvailableListener())
+		            .addEventListener(new MessageReceivedListener())
+		            .addEventListener(new GuildJoinListener())
+		            .addEventListener(new GuildLeaveListener())
                     .buildAsync();
         } catch (ConfigException | LoginException | IllegalArgumentException | RateLimitedException e) {
             SimpleLog.getLog("Startup").fatal(e);

@@ -22,10 +22,7 @@ public class EchoCommand extends Command {
 	
 	@Override
 	protected void execute(CommandEvent event) {
-		event.getMessage().delete().queue(v -> {
-			event.getChannel().sendMessage(event.getArgs());
-		}, t -> {
-			event.reply(event.getClient().getError() + " | Could not echo message!\n" + t.getMessage());
-		});
+		event.getMessage().delete().queue();
+		event.reply(event.getArgs());
 	}
 }

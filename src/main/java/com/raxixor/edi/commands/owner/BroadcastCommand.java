@@ -32,7 +32,7 @@ public class BroadcastCommand extends Command {
 		EmbedBuilder embed = new EmbedBuilder()
 				.setColor(Color.RED)
 				.setAuthor(event.getAuthor().getName() + "#" + event.getAuthor().getDiscriminator(), event.getAuthor().getAvatarUrl(), event.getAuthor().getAvatarUrl())
-				.setTitle("BROADCAST", null)
+				.setTitle("Broadcast", null)
 				.setDescription(args);
 		
 		List<Guild> guilds = event.getJDA().getGuilds();

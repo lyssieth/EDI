@@ -1,11 +1,11 @@
 package com.raxixor.edi.commands.all;
 
 import com.raxixor.edi.Bot;
-import me.jagrosh.jdautilities.commandclient.Command;
-import me.jagrosh.jdautilities.commandclient.CommandEvent;
-import me.jagrosh.jdautilities.menu.pagination.Paginator;
-import me.jagrosh.jdautilities.menu.pagination.PaginatorBuilder;
-import me.jagrosh.jdautilities.waiter.EventWaiter;
+import com.jagrosh.jdautilities.commandclient.Command;
+import com.jagrosh.jdautilities.commandclient.CommandEvent;
+import com.jagrosh.jdautilities.menu.pagination.Paginator;
+import com.jagrosh.jdautilities.menu.pagination.PaginatorBuilder;
+import com.jagrosh.jdautilities.waiter.EventWaiter;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.exceptions.PermissionException;

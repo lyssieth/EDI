@@ -1,8 +1,8 @@
 package com.raxixor.edi.commands.owner;
 
 import com.raxixor.edi.Bot;
-import me.jagrosh.jdautilities.commandclient.Command;
-import me.jagrosh.jdautilities.commandclient.CommandEvent;
+import com.jagrosh.jdautilities.commandclient.Command;
+import com.jagrosh.jdautilities.commandclient.CommandEvent;
 
 /**
  * Created by raxix on 16/03/2017, 18:32.

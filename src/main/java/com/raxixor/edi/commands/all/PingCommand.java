@@ -1,8 +1,8 @@
 package com.raxixor.edi.commands.all;
 
 import com.raxixor.edi.Bot;
-import me.jagrosh.jdautilities.commandclient.Command;
-import me.jagrosh.jdautilities.commandclient.CommandEvent;
+import com.jagrosh.jdautilities.commandclient.Command;
+import com.jagrosh.jdautilities.commandclient.CommandEvent;
 
 import java.time.temporal.ChronoUnit;
 

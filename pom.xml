@@ -32,7 +32,7 @@
     
     <dependencies>
         <dependency>
-            <groupId>me.jagrosh</groupId>
+            <groupId>com.jagrosh</groupId>
             <artifactId>JDA-Utilities</artifactId>
             <version>LATEST</version>
         </dependency>
@@ -76,6 +76,12 @@
             <artifactId>lombok</artifactId>
             <version>1.16.10</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>1.4.9</version>
         </dependency>
     </dependencies>
 </project>

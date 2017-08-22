@@ -1,9 +1,9 @@
 package com.raxixor.edi.commands.mod;
 
 import com.raxixor.edi.Bot;
-import me.jagrosh.jdautilities.commandclient.Command;
-import me.jagrosh.jdautilities.commandclient.CommandEvent;
-import me.jagrosh.jdautilities.waiter.EventWaiter;
+import com.jagrosh.jdautilities.commandclient.Command;
+import com.jagrosh.jdautilities.commandclient.CommandEvent;
+import com.jagrosh.jdautilities.waiter.EventWaiter;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.TextChannel;

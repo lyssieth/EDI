@@ -2,8 +2,8 @@ package com.raxixor.edi.commands.channel;
 
 import com.raxixor.edi.Bot;
 import com.sun.istack.internal.Nullable;
-import me.jagrosh.jdautilities.commandclient.Command;
-import me.jagrosh.jdautilities.commandclient.CommandEvent;
+import com.jagrosh.jdautilities.commandclient.Command;
+import com.jagrosh.jdautilities.commandclient.CommandEvent;
 import net.dv8tion.jda.core.Permission;
 
 /**

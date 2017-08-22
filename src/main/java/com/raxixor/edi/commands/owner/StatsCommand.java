@@ -1,12 +1,11 @@
 package com.raxixor.edi.commands.owner;
 
 import com.raxixor.edi.Bot;
-import me.jagrosh.jdautilities.commandclient.Command;
-import me.jagrosh.jdautilities.commandclient.CommandEvent;
+import com.jagrosh.jdautilities.commandclient.Command;
+import com.jagrosh.jdautilities.commandclient.CommandEvent;
 import net.dv8tion.jda.core.EmbedBuilder;
 
 import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  * Created by raxix on 14/03/2017, 19:06.

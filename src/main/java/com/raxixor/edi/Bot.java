@@ -1,6 +1,6 @@
 package com.raxixor.edi;
 
-import me.jagrosh.jdautilities.commandclient.Command.Category;
+import com.jagrosh.jdautilities.commandclient.Command.Category;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.utils.PermissionUtil;
@@ -27,12 +27,12 @@ public class Bot {
 	public final Category MOD = new Category("Moderator", event -> {
 		if (event.getAuthor().getId().equals(event.getClient().getOwnerId()))
 			return true;
-		if (PermissionUtil.checkPermission(event.getGuild(), event.getMember(), Permission.MESSAGE_MANAGE, Permission.KICK_MEMBERS, Permission.MANAGE_CHANNEL))
+		if (PermissionUtil.checkPermission(event.getMember(), Permission.MESSAGE_MANAGE, Permission.KICK_MEMBERS, Permission.MANAGE_CHANNEL))
 			return true;
 		return false;
 	});
 	public final Category ADMIN = new Category("Admin", event -> {
-		if (PermissionUtil.checkPermission(event.getGuild(), event.getMember(), Permission.MANAGE_PERMISSIONS, Permission.MANAGE_ROLES, Permission.BAN_MEMBERS, Permission.MESSAGE_MANAGE))
+		if (PermissionUtil.checkPermission(event.getMember(), Permission.MANAGE_PERMISSIONS, Permission.MANAGE_ROLES, Permission.BAN_MEMBERS, Permission.MESSAGE_MANAGE))
 			return true;
 		return false;
 	});

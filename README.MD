@@ -4,7 +4,7 @@ A bot being actively developed for some purpose.
 ## Info
 Prefix: `::` (Soon™ to be customizable)  
 Help Command: `::help`  
-Owner: `Skynet#5926`  
+Owner: `SHODAN#5926`  
 Commands [here](./src/main/java/com/raxixor/edi/commands/)  
 
 ## Libraries

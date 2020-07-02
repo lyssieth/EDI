@@ -1,5 +1,5 @@
 # EDI
-A bot being actively developed for some purpose.
+A bot being inactively developed for some purpose.
 
 ## Info
 Prefix: `::` (Soon™ to be customizable)  
